@@ -30,11 +30,11 @@ npm run dev
 
 ```sh
 npx --yes wrangler@4.151.3 login
-npx --yes wrangler@4.151.3 pages project create wechatmp-chapter-images --production-branch main
+npx --yes wrangler@4.151.3 pages project create wechatmp-chapter-images --production-branch main --force
 npm run deploy
 ```
 
-Pages 项目只需创建一次。后续更新源码、推送 GitHub 后，执行 `npm run deploy` 发布。
+Pages 项目只需创建一次；`--force` 仅用于首次创建的 Pages 兼容模式，后续部署无需此参数。后续更新源码、推送 GitHub 后，执行 `npm run deploy` 发布。
 
 若在 Cloudflare 控制台通过 Git 仓库配置构建，使用：
 
@@ -55,3 +55,4 @@ Pages 项目只需创建一次。后续更新源码、推送 GitHub 后，执行
 - `wrangler.jsonc`：Cloudflare Pages 配置。
 
 草稿保存在当前浏览器的 localStorage 和 IndexedDB；清除站点数据会删除草稿。字体首次使用需要联网。GitHub 源码和 Cloudflare 部署不包含个人草稿。
+
